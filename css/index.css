@@ -52,6 +52,7 @@ h1 {
 }
 
 /* Status */
+
 #status {
 	width: 100%;
 }
@@ -78,9 +79,14 @@ h1 {
 	color: blue;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 #status > button {
 	cursor: pointer;
 	height: 36pt;
+	line-height: 1em;
 	vertical-align: middle;
 	font-size: 16pt;
 	padding: 0.5em;
@@ -100,9 +106,6 @@ h1 {
 #status > button:focus {
 	color: gold;
 	font-weight: bold;
-}
-.icon {
-	font-size: 32pt;
 }
 
 #Add {

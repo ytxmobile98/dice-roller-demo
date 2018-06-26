@@ -20,7 +20,7 @@
 	<br>
 	<button id="Add" onclick="addDie();" accesskey="a"><b>+</b> Add</button>
 	<button id="Remove" onclick="removeLastDie();" accesskey="m"><b>-</b> Remove</button>
-	<button id="Roll" onclick="rollDice();" accesskey="r" autofocus><b>&#x21BB;</b> Roll</button>
+	<button id="Roll" onclick="hideNumbers(); setTimeout(rollDice, 150);" accesskey="r" autofocus><b>&#x21BB;</b> Roll</button>
 </div>
 
 <p>A roll is <i>lucky</i> if: 

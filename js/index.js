@@ -64,6 +64,17 @@ function setButtonStatus () {
 	}
 }
 
+function hideNumbers () {
+	var i = 0;
+	for (i = 0; i < dice.length; ++i) {
+		dice[i].innerHTML = "&nbsp;";
+	}
+	sum.classList.add("hidden");
+	luckyRolls.classList.add("hidden");
+	
+	return;
+}
+
 function rollDice () {
 	var i = 0;
 	for (i = 0; i < dice.length; ++i) {
@@ -77,9 +88,9 @@ function getRandomInt (minInt, maxInt) {
 }
 
 function updateSum () {
-	var diceSum = 0, j = 0;
-	for (j = 0; j < dice.length; ++j) {
-		diceSum += Number(dice[j].innerHTML);
+	var diceSum = 0, i = 0;
+	for (i = 0; i < dice.length; ++i) {
+		diceSum += Number(dice[i].innerHTML);
 	}
 	sum.innerHTML = diceSum;
 	isLucky();
@@ -87,7 +98,7 @@ function updateSum () {
 }
 
 function isLucky () {
-	var refVal = 0, k = 0;
+	var refVal = 0, i = 0;
 	var curRollIsLucky = true;
 	
 	if (dice.length == 1) { // if rolling one die, 6 is the lucky roll
@@ -96,8 +107,8 @@ function isLucky () {
 	}
 	else {
 		refVal = Number(document.getElementsByClassName("die")[0].innerHTML);
-		for (k = 0; k < dice.length; ++k) {
-			if (Number(document.getElementsByClassName("die")[k].innerHTML) != refVal) {
+		for (i = 0; i < dice.length; ++i) {
+			if (Number(document.getElementsByClassName("die")[i].innerHTML) != refVal) {
 				curRollIsLucky = false;
 				break;
 			}
@@ -112,8 +123,8 @@ function isLucky () {
 function updateLuckyRolls (curRollIsLucky) {
 	
 	if (curRollIsLucky) {
-		sum.classList.add("lucky");
-		luckyRolls.classList.add("lucky");
+		sum.setAttribute("class", "lucky");
+		luckyRolls.setAttribute("class", "lucky");
 		++numLuckyRolls;
 	} else {
 		sum.removeAttribute("class");
