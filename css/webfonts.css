@@ -1,6 +1,6 @@
 @font-face {
 	font-family: FreeSans;
-	src: local("FreeSans Regular"), url("../webfonts/FreeSans.woff") format("woff");
+	src: local("FreeSans"), url("../webfonts/FreeSans.woff") format("woff");
 }
 
 @font-face {
