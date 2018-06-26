@@ -21,13 +21,14 @@ h1 {
 	display: inline-block;
 	margin: 0.5em auto;
 	padding: 0.5em;
-	background-color: blue;
-	color: white;
+	background-color: whitesmoke;
+	color: black;
 	text-decoration: none;
+	border: 2px solid black;
 	border-radius: 4px;
 }
 #source-code-on-github:hover {
-	color: yellow;
+	background-color: snow;
 }
 
 /* Dice */
@@ -79,6 +80,8 @@ h1 {
 
 #status > button {
 	cursor: pointer;
+	height: 36pt;
+	vertical-align: middle;
 	font-size: 16pt;
 	padding: 0.5em;
 	margin-left: 0.25em;
