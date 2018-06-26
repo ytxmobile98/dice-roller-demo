@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+<meta charset="utf-8" />
+<title>Dice Roller</title>
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body onload="setButtonStatus(); updateSum();">
+<h1>Dice Roller</h1>
+<p>This dice roller supports rolling 1~6 fair six-sided dice.</p>
+
+<div id="dice-holder">
+	<div class="die">1</div>
+</div>
+
+<div id="status">
+	<p>Sum: <br><span id="sum">6</span></p>
+	<p>Lucky Rolls: <br><span id="lucky-rolls">0</span> time(s)</p>
+	<br>
+	<button id="Add" onclick="addDie();" accesskey="a"><b>+</b> Add</button>
+	<button id="Remove" onclick="removeLastDie();" accesskey="m"><b>-</b> Remove</button>
+	<button id="Roll" onclick="rollDice();" accesskey="r" autofocus><b>&#x21BB;</b> Roll</button>
+</div>
+
+<p>A roll is <i>lucky</i> if: 
+	<ol>
+		<li>Rolling a <b>6</b> if rolling a single die.</li>
+		<li>Rolling <b>all the same number</b> if rolling 2~6 dice.</li>
+	</ol>
+</p>
+
+</body>
+
+<script src="js/index.js">
+
+</script>
+</html>

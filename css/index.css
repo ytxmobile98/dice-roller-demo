@@ -1,0 +1,112 @@
+@import url("webfonts.css");
+
+/* Document */
+
+* {
+	font-family: FreeSans, sans-serif;
+	font-size: 16pt;
+}
+
+body {
+	max-width: 600px;
+	padding: 0.5em;
+	margin: auto;
+}
+
+h1 {
+	font-size: 28pt;
+}
+
+
+/* Dice */
+
+#dice-holder {
+	width: 100%;
+}
+
+.die {
+	height: 50pt;
+	width: 50pt;
+	display: inline-block;
+	margin: 0 0 0.25em 0.25em;
+	line-height: 50pt;
+	font-size: 40pt;
+	text-align: center;
+	vertical-align: middle;
+	background: lightyellow;
+	border: 2px solid black;
+	border-radius: 6px;
+}
+
+/* Status */
+#status {
+	width: 100%;
+}
+
+#status > * {
+	margin: 0.25em;
+	min-width: 25%;
+}
+
+#status > p {
+	display: inline-block;
+}
+
+#sum, #lucky-rolls {
+	font-size: 40pt;
+}
+
+#sum.lucky, #lucky-rolls.lucky {
+	color: red;
+}
+
+#sum {
+	font-weight: bold;
+	color: blue;
+}
+
+#status > button {
+	cursor: pointer;
+	font-size: 16pt;
+	padding: 0.5em;
+	margin-left: 0.25em;
+	border: 2px solid black;
+	border-radius: 4px;
+	text-transform: uppercase;
+	color: white;
+}
+#status > button:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+}
+#status > button:hover {
+	font-weight: bold;
+}
+#status > button:focus {
+	color: gold;
+	font-weight: bold;
+}
+.icon {
+	font-size: 32pt;
+}
+
+#Add {
+	background-color: green;	
+}
+#Add:hover {
+	background-color: limegreen;
+}
+
+#Remove {
+	background-color: darkred;
+}
+#Remove:hover {
+	background-color: red;
+}
+
+#Roll {
+	background-color: navy;
+}
+#Roll:hover {
+	background-color: dodgerblue;
+}
