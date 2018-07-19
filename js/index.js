@@ -134,3 +134,4 @@ function updateLuckyRolls (curRollIsLucky) {
 	
 	luckyRolls.innerHTML = numLuckyRolls;
 }
+

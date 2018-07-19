@@ -4,13 +4,14 @@
 
 * {
 	font-family: FreeSans, sans-serif;
-	font-size: 16pt;
 }
 
 body {
 	max-width: 600px;
 	padding: 0.5em;
 	margin: auto;
+	margin-top: 2em;
+	font-size: 16pt;
 }
 
 h1 {
@@ -29,6 +30,21 @@ h1 {
 }
 #source-code-on-github:hover {
 	background-color: snow;
+}
+
+/* Time */
+
+#time {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 0.5em;
+	background-color: black;
+	color: lime;
+	text-align: center;
+	font-weight: bold;
 }
 
 /* Dice */

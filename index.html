@@ -6,7 +6,10 @@
 <title>Dice Roller</title>
 <link rel="stylesheet" href="css/index.css" />
 </head>
-<body onload="setButtonStatus(); updateSum();">
+<body onload="setButtonStatus(); updateSum(); getCurrentTime();">
+
+<p id="time"></p>
+
 <h1>Dice Roller</h1>
 <p>This dice roller supports rolling 1~6 fair six-sided dice.</p>
 
@@ -34,7 +37,7 @@
 
 </body>
 
-<script src="js/index.js">
+<script src="js/index.js"></script>
+<script src="js/time.js"></script>
 
-</script>
 </html>
