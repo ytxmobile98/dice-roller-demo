@@ -10,7 +10,7 @@ function getCurrentTime () {
 	
 	time.innerHTML = hh + ":" + mm + ":" + ss;
 	
-	var t = setTimeout(getCurrentTime, 500); 
+	var t = setTimeout(getCurrentTime, 100); 
 	
 	return;
 }
