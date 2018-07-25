@@ -16,7 +16,7 @@ function addDie () {
 	}
 		
 	var emptyTextNode = diceHolder.lastChild; 
-	if (emptyTextNode.nodeType == 3) {
+	if (emptyTextNode.nodeType === 3) {
 		diceHolder.removeChild(emptyTextNode);
 	}
 	
@@ -39,7 +39,7 @@ function removeLastDie () {
 	}
 	
 	var lastDie = dice[dice.length - 1];
-	document.getElementById("dice-holder").removeChild(lastDie);
+	diceHolder.removeChild(lastDie);
 	
 	setButtonStatus();
 	updateSum();
@@ -67,12 +67,16 @@ function setButtonStatus () {
 function hideNumbers () {
 	var i = 0;
 	for (i = 0; i < dice.length; ++i) {
-		dice[i].innerHTML = "&nbsp;";
+		dice[i].innerHTML = " ";
 	}
 	sum.classList.add("hidden");
 	luckyRolls.classList.add("hidden");
 	
 	return;
+}
+
+function getRandomInt (minInt, maxInt) {
+	return Math.floor(Math.random() * (maxInt - minInt + 1) + minInt);
 }
 
 function rollDice () {
@@ -81,10 +85,6 @@ function rollDice () {
 		dice[i].innerHTML = getRandomInt(dieMin, dieMax);
 	}
 	updateSum();
-}
-
-function getRandomInt (minInt, maxInt) {
-	return Math.floor(Math.random() * (maxInt - minInt + 1) + minInt);
 }
 
 function updateSum () {
@@ -101,9 +101,9 @@ function isLucky () {
 	var refVal = 0, i = 0;
 	var curRollIsLucky = true;
 	
-	if (dice.length == 1) { // if rolling one die, 6 is the lucky roll
+	if (dice.length === 1) { // if rolling one die, 6 is the lucky roll
 		refVal = 6;
-		curRollIsLucky = (Number(sum.innerHTML) == refVal);
+		curRollIsLucky = (Number(sum.innerHTML) === refVal);
 	}
 	else {
 		refVal = Number(document.getElementsByClassName("die")[0].innerHTML);
@@ -134,4 +134,3 @@ function updateLuckyRolls (curRollIsLucky) {
 	
 	luckyRolls.innerHTML = numLuckyRolls;
 }
-
