@@ -1,16 +1,16 @@
 "use strict";
-var time = document.getElementById("time");
+const time = document.getElementById("time");
 
 function getCurrentTime () {
 	
-	var today = new Date();
-	var hh = checkNum(today.getHours());
-	var mm = checkNum(today.getMinutes());
-	var ss = checkNum(today.getSeconds());
+	let today = new Date();
+	let hh = checkNum(today.getHours());
+	let mm = checkNum(today.getMinutes());
+	let ss = checkNum(today.getSeconds());
 	
 	time.innerHTML = hh + ":" + mm + ":" + ss;
 	
-	var t = setTimeout(getCurrentTime, 100); 
+	let t = setTimeout(getCurrentTime, 100); 
 	
 	return;
 }

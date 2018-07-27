@@ -124,23 +124,23 @@ h1 {
 	font-weight: bold;
 }
 
-#Add {
+#add {
 	background-color: green;	
 }
-#Add:hover {
+#add:hover {
 	background-color: limegreen;
 }
 
-#Remove {
+#remove {
 	background-color: darkred;
 }
-#Remove:hover {
+#remove:hover {
 	background-color: red;
 }
 
-#Roll {
+#roll {
 	background-color: navy;
 }
-#Roll:hover {
+#roll:hover {
 	background-color: dodgerblue;
 }

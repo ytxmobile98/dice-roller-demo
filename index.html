@@ -8,24 +8,22 @@
 <link rel="icon" href="icon.png" />
 <link rel="icon" href="icon.svg" />
 </head>
-<body onload="setButtonStatus(); updateSum(); getCurrentTime();">
+<body onload="diceDOMManager.setButtonStatus(); diceDOMManager.updateDisplay(); getCurrentTime();">
 
 <p id="time"></p>
 
 <h1>Dice Roller</h1>
 <p>This dice roller supports rolling 1~6 fair six-sided dice.</p>
 
-<div id="dice-holder">
-	<div class="die">1</div>
-</div>
+<div id="dice-holder"><div class="die">1</div></div>
 
 <div id="status">
 	<p><b>Sum:</b> <br><span id="sum">6</span></p>
 	<p><b>Lucky Rolls:</b> <br><span id="lucky-rolls">0</span> time(s)</p>
 	<br>
-	<button id="Add" onclick="addDie();" accesskey="a"><b>+</b> Add</button>
-	<button id="Remove" onclick="removeLastDie();" accesskey="m"><b>-</b> Remove</button>
-	<button id="Roll" onclick="hideNumbers(); setTimeout(rollDice, 150);" accesskey="r" autofocus><b>&#x21BB;</b> Roll</button>
+	<button id="add" onclick="diceDOMManager.addDie();" accesskey="a"><b>+</b> Add</button>
+	<button id="remove" onclick="diceDOMManager.removeLastDie();" accesskey="m"><b>-</b> Remove</button>
+	<button id="roll" onclick="diceDOMManager.rollDice();" accesskey="r" autofocus><b>&#x21BB;</b> Roll</button>
 </div>
 
 <p>A roll is <i>lucky</i> if: 
@@ -39,7 +37,7 @@
 
 </body>
 
-<script src="js/index.js"></script>
+<script src="js/dice.js"></script>
 <script src="js/time.js"></script>
 
 </html>
