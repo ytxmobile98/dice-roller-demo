@@ -6,8 +6,18 @@
 	font-family: FreeSans, sans-serif;
 }
 
+html {
+	height: 100%;
+	background-color: lightgray;
+}
+
 body {
-	max-width: 600px;
+	background-color: white;
+	border: 2px solid darkgray;
+	border-width: 0px 2px;
+	--doc-max-width: 600px;
+	max-width: var(--doc-max-width);
+	min-height: calc(100% - 3em);
 	padding: 0.5em;
 	margin: auto;
 	margin-top: 2em;
@@ -33,19 +43,34 @@ h1 {
 }
 
 /* Time */
-
-#time {
+#time-bar {
 	position: fixed;
 	top: 0;
 	left: 0;
-	right: 0;
+	right: 0;	
 	margin: auto;
-	padding: 0.5em;
+	--basic-margin: 0.5em;
+	--margin: calc(50% - var(--doc-max-width)/2 + 10%);
+	padding: var(--basic-margin) var(--margin);
 	line-height: 1em;
 	background-color: black;
 	color: lime;
 	text-align: center;
 	font-weight: bold;
+}
+
+@media screen and (max-width: calc(600px + 2em)) {
+	#time-bar {
+		padding: var(--basic-margin) calc(var(--basic-margin) + 10%);
+	}
+}
+
+#date {
+	float: left;
+}
+
+#time {
+	float: right;
 }
 
 /* Dice */
