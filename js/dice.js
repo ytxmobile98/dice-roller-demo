@@ -174,3 +174,28 @@ const diceDOMManager = {
 	},
 
 };
+
+function setButtonStatus () {
+	diceDOMManager.setButtonStatus();
+	return;
+}
+
+function updateDisplay () {
+	diceDOMManager.updateDisplay();
+	return;
+}
+
+function addDie () {
+	diceDOMManager.addDie();
+	return;
+}
+
+function removeLastDie () {
+	diceDOMManager.removeLastDie();
+	return;
+}
+
+function rollDice () {
+	diceDOMManager.rollDice();
+	return
+}
