@@ -5,10 +5,10 @@
 <meta charset="utf-8" />
 <title>Dice Roller</title>
 <link rel="stylesheet" href="css/index.css" />
-<link rel="icon" href="icon.png" />
-<link rel="icon" href="icon.svg" />
+<link rel="icon" href="icons/icon.png" />
+<link rel="icon" href="icons/icon.svg" />
 </head>
-<body onload="setButtonStatus(); updateDisplay(); getCurrentTime();">
+<body onload="diceDOMManager.setButtonStatus(); diceDOMManager.updateDisplay(); getCurrentTime();">
 
 <p id="time-bar">
 	<span id="date"></span> <span id="time"></span>
@@ -23,17 +23,16 @@
 	<p><b>Sum:</b> <br><span id="sum">6</span></p>
 	<p><b>Lucky Rolls:</b> <br><span id="lucky-rolls">0</span> time(s)</p>
 	<br>
-	<button id="add" onclick="addDie();" accesskey="a"><b>+</b> <u>A</u>dd</button>
-	<button id="remove" onclick="removeLastDie();" accesskey="m"><b>-</b> Re<u>m</u>ove</button>
-	<button id="roll" onclick="rollDice();" accesskey="r" autofocus><b>&#x21BB;</b> <u>R</u>oll</button>
+	<button id="add" onclick="diceDOMManager.addDie();" accesskey="a"><b>+</b> <u>A</u>dd</button>
+	<button id="remove" onclick="diceDOMManager.removeLastDie();" accesskey="m"><b>-</b> Re<u>m</u>ove</button>
+	<button id="roll" onclick="diceDOMManager.rollDice();" accesskey="r" autofocus><b>&#x21BB;</b> <u>R</u>oll</button>
 </div>
 
-<p>A roll is <i>lucky</i> if: 
+<p>A roll is <i>lucky</i> if: </p> 
 	<ol>
 		<li>Rolling a <b>6</b> if rolling a single die.</li>
 		<li>Rolling <b>all the same number</b> if rolling 2~6 dice.</li>
 	</ol>
-</p>
 
 <p><b><a id="source-code-on-github" href="https://github.com/ytx21cn/dice-roller-demo" target="_blank">&#x2192; Source Code on GitHub</a></b></p>
 

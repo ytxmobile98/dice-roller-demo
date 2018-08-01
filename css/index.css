@@ -15,8 +15,7 @@ body {
 	background-color: white;
 	border: 2px solid darkgray;
 	border-width: 0px 2px;
-	--doc-max-width: 600px;
-	max-width: var(--doc-max-width);
+	max-width: 600px;
 	min-height: calc(100% - 3em);
 	padding: 0.5em;
 	margin: auto;
@@ -49,9 +48,7 @@ h1 {
 	left: 0;
 	right: 0;	
 	margin: auto;
-	--basic-margin: 0.5em;
-	--margin: calc(50% - var(--doc-max-width)/2 + 10%);
-	padding: var(--basic-margin) var(--margin);
+	padding: 0.5em calc(50% - 600px /2 + 10%);;
 	line-height: 1em;
 	background-color: black;
 	color: lime;
@@ -61,7 +58,7 @@ h1 {
 
 @media screen and (max-width: calc(600px + 2em)) {
 	#time-bar {
-		padding: var(--basic-margin) calc(var(--basic-margin) + 10%);
+		padding: 0.5em calc(0.5em + 10%);
 	}
 }
 

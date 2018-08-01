@@ -42,7 +42,7 @@ const diceRoller = {
 		}
 	},
 	
-	updateNumLuckyRolls (isLucky) {
+	updateNumLuckyRolls: function (isLucky) {
 		if (isLucky) {
 			++this.numLuckyRolls;
 		}
@@ -52,7 +52,7 @@ const diceRoller = {
 		return;
 	},
 	
-	rollDice () {
+	rollDice: function () {
 		for (let i = 0; i < this.dice.length; ++i) {
 			this.dice[i] = getRandomInt(dieMin, dieMax);
 		}
@@ -60,13 +60,13 @@ const diceRoller = {
 		return;
 	},
 	
-	addDie () {
+	addDie: function () {
 		this.dice.push(1);
 		this.updateNumLuckyRolls(false);
 		return;
 	},
 	
-	removeLastDie () {
+	removeLastDie: function () {
 		this.dice.pop();
 		this.updateNumLuckyRolls(false);
 		return;
@@ -82,7 +82,7 @@ const diceDOMManager = {
 	addButton: document.getElementById("add"),
 	removeButton: document.getElementById("remove"),
 	
-	hideOriginalDisplay () {
+	hideOriginalDisplay: function () {
 		for (let i = 0; i < this.dice.length; ++i) {
 			this.dice[i].innerHTML = "&nbsp;";		
 		}
@@ -91,7 +91,7 @@ const diceDOMManager = {
 		return;
 	},
 	
-	updateDisplay () {
+	updateDisplay: function () {
 		if (this.dice.length != diceRoller.dice.length) { // this part is used to prevent accessing indices out of bound
 			return;
 		}
@@ -115,7 +115,7 @@ const diceDOMManager = {
 		return;
 	},
 	
-	setButtonStatus () {
+	setButtonStatus: function () {
 		/* Allowed: 1-6 dice */
 		
 		if (this.dice.length >= 6) {
@@ -136,16 +136,14 @@ const diceDOMManager = {
 		return;
 	},
 	
-	rollDice() {
+	rollDice: function () {
 		this.hideOriginalDisplay();
 		diceRoller.rollDice();
-		setTimeout(() => {
-			this.updateDisplay();
-		}, 150);
+		setTimeout(this.updateDisplay.bind(this), 150);
 		return;
 	},
 	
-	addDie () {
+	addDie: function () {
 		diceRoller.addDie();
 		
 		/* Create new die HTML element */
@@ -160,7 +158,7 @@ const diceDOMManager = {
 		return;
 	},
 	
-	removeLastDie () {
+	removeLastDie: function () {
 		diceRoller.removeLastDie();
 		
 		/* Locate the last die on the page */
@@ -174,28 +172,3 @@ const diceDOMManager = {
 	},
 
 };
-
-function setButtonStatus () {
-	diceDOMManager.setButtonStatus();
-	return;
-}
-
-function updateDisplay () {
-	diceDOMManager.updateDisplay();
-	return;
-}
-
-function addDie () {
-	diceDOMManager.addDie();
-	return;
-}
-
-function removeLastDie () {
-	diceDOMManager.removeLastDie();
-	return;
-}
-
-function rollDice () {
-	diceDOMManager.rollDice();
-	return
-}
