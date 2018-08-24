@@ -27,6 +27,12 @@ h1 {
 	font-size: 28pt;
 }
 
+#die-icon {
+	height: 1em;
+	vertical-align: top;
+	margin-right: 0.25em;
+}
+
 #source-code-on-github {
 	display: inline-block;
 	margin: 0.5em auto;
